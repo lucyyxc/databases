@@ -1,2 +1,14 @@
-CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
-   species VARCHAR(20));
+SHOW TABLES; //all tables in database
+
+CREATE TABLE pet (primarykey INT(11), name VARCHAR(20), owner VARCHAR(20),
+   );
+
+DESCRIBE pet //to see how pet table looks like
+
+SELECT * FROM pet //to see table
+
+INSERT INTO pet VALUES ('2', 'Walter', 'Lucy');
+
+UPDATE pet SET owner //key = ‘timothy’ //new value WHERE name=‘mochi’;
+
+

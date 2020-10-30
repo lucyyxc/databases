@@ -1,49 +1,41 @@
-CREATE DATABASE chat;
-USE chat;
+-- CREATE DATABASE chat;
+USE chat
 -- //specifies DATABASE
-CREATE TABLE Messages (
-  MessagesID INT(11) not null primary key auto_increment,
-  text VARCHAR(280),
-  User INT(11),
-  FOREIGN KEY (User) REFERENCES User(UserID),
-  Room INT(11)
-  FOREIGN KEY (Room) REFERENCES Room(RoomID),
-);
-
-
 CREATE TABLE User (
   UserID INT(11) not null primary key auto_increment,
   Name VARCHAR(280)
 );
 
-
 CREATE TABLE Room (
   RoomID INT(11) not null primary key auto_increment,
   Name VARCHAR(280)
 );
-
-CREATE TABLE UserRoom (
-  UserRoomID INT(11) not null primary key auto_increment,
+CREATE TABLE Messages (
+  MessagesID INT(11) not null primary key auto_increment,
+  text VARCHAR(280),
   User INT(11),
   FOREIGN KEY (User) REFERENCES User(UserID),
-  RoomID INT(11),
+  Room INT(11),
   FOREIGN KEY (Room) REFERENCES Room(RoomID)
 );
 
 
-INSERT INTO User VALUES ('null', 'Jacky');
-INSERT INTO User VALUES ('null', 'Lucy');
-INSERT INTO User VALUES ('null', 'Chris');
-INSERT INTO User VALUES ('null', 'Tony');
-
-INSERT INTO Room VALUES ('null', 'Lobby');
-INSERT INTO Room VALUES ('null', 'PentHouse');
-INSERT INTO Room VALUES ('null', 'School');
-INSERT INTO Room VALUES ('null', 'Kitchen');
-
+SHOW TABLES;
+-- CREATE TABLE UserRoom (
+--   UserRoomID INT(11) not null primary key auto_increment,
+--   User INT(11),
+--   FOREIGN KEY (User) REFERENCES User(UserID),
+--   Room INT(11),
+--   FOREIGN KEY (Room) REFERENCES Room(RoomID)
+-- );
 
 
-INSERT INTO Messages VALUES ('null', 'Lobby');
+-- INSERT INTO User (Name) VALUES ('Lucy', 'Jacky', 'Chris', 'Tony');
+
+-- NSERT INTO Room (Name) VALUES ('Lobby');
+
+-- INSERT INTO Messages VALUES ('hello', 1, 1);
+
 /* Create other tables and define schemas for them here! */
 
 
